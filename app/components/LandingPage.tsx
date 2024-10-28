@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import GameImage from "../assets/game2.jpg";
 import GolfImage from "../assets/golf.jpg";
 
 export default function LandingPage() {
@@ -58,22 +59,26 @@ export default function LandingPage() {
       </header>
 
       <main className="flex-grow">
-        <section className="bg-blue-100 py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Experience Golf Like Never Before
-            </h1>
-            <p className="text-xl mb-8">
-              Datacenter Gaming presents the most immersive golf simulation ever
-              created
-            </p>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-              Pre-order Now
-            </Button>
+        <section className="relative bg-blue-100 py-52 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={GameImage}
+              className="blur-sm grayscale-[80%]"
+              alt="Gaming setup"
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-slate-950 opacity-70"></div>
+          </div>
+          <div className="relative z-10 container mx-auto px-4 text-center text-white">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Experience Golf Like Never Before</h1>
+            <p className="text-xl mb-8">Datacenter Gaming presents the most immersive golf simulation ever created</p>
+            <Button className="bg-blue-600 hover:bg-blue-700 text-white">Pre-order Now</Button>
           </div>
         </section>
 
-        <section id="features" className="py-20">
+        <section id="features" className="py-28">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Game Features
@@ -107,7 +112,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="about" className="bg-blue-50 py-20">
+        <section id="about" className="bg-blue-50 py-28">
           <div className="container mx-auto px-4">
             <div className="md:flex items-center">
               <div className="md:w-1/2 mb-8 md:mb-0">
@@ -137,7 +142,7 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="contact" className="py-20">
+        <section id="contact" className="py-28">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold mb-8">Stay Updated</h2>
             <p className="mb-8">
